@@ -14,8 +14,6 @@ This dataset includes all valid felony, misdemeanor, and violation crimes report
 
 3.	Link that shows the data dictionary (excel, google sheets)
 
-5.	
-6.	Github/AzureDevops/Jira account created
-7.	Scripts that gather these data
-8.	Git Repository Created
-9.	You script should be stored in a git repository that is accessible to all members of your team and the professor. 
+https://github.com/jayramirez1/CIS9440-HW---Jay-Ramirez/blob/main/Documents/NYPD_Complaint_DataDictionary.xlsx
+
+
