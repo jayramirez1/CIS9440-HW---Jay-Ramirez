@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="NYPDcomplaints_dw_lgl" id="PostgreSQL-1f19" database="PostgreSQL" >
+	<schema name="instance" catalogname="NYPDcomplaints_dw_lgl" >
+		<table name="dim_date" >
+			<column name="date_id" prior="DATE_ID" type="INT" jt="4" mandatory="y" />
+			<column name="cmplnt_fr_dt" prior="CMPLNT_FR_DT" type="DATE" jt="91" />
+			<column name="cmplnt_to_dt" prior="CMPLNT_TO_DT" type="DATE" jt="91" />
+			<column name="rpt_dt" prior="RPT_DT" type="DATE" jt="91" />
+			<column name="cmplnt_fr_iso" prior="CMPLNT_FR_ISO" type="DATETIME" length="255" jt="93" />
+			<column name="cmplnt_to_iso" prior="CMPLNT_TO_ISO" type="DATETIME" length="255" jt="93" />
+			<index name="pk_dim_date" unique="PRIMARY_KEY" >
+				<column name="date_id" />
+			</index>
+		</table>
+		<table name="dim_jurisdiction" >
+			<column name="jurisdication_id" prior="JURISDICATION_ID" type="INT" jt="4" mandatory="y" />
+			<column name="juris_desc" prior="JURIS_DESC" type="VARCHAR" length="255" jt="12" />
+			<index name="pk_dim_jurisdiction" unique="PRIMARY_KEY" >
+				<column name="jurisdication_id" />
+			</index>
+		</table>
+		<table name="dim_location" >
+			<column name="location_id" prior="LOCATION_ID" type="INT" jt="4" mandatory="y" />
+			<column name="boro_nm" prior="BORO_NM" type="VARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="latitude" prior="Latitude" type="DOUBLE" jt="8" />
+			<column name="longitude" prior="Longitude" type="DOUBLE" jt="8" />
+			<index name="pk_dim_location" unique="PRIMARY_KEY" >
+				<column name="location_id" />
+			</index>
+		</table>
+		<table name="dim_offense" >
+			<column name="offense_id" prior="OFFENSE_ID" type="INT" jt="4" mandatory="y" />
+			<column name="crm_atpt_cptd_cd" prior="CRM_ATPT_CPTD_CD" type="VARCHAR" length="255" jt="12" />
+			<column name="law_cat_cd" prior="LAW_CAT_CD" type="VARCHAR" length="255" jt="12" />
+			<column name="ofns_desc" prior="OFNS_DESC" type="VARCHAR" length="255" jt="12" />
+			<column name="pd_cd" prior="PD_CD" type="NVARCHAR" length="255" jt="12" />
+			<column name="pd_desc" prior="PD_DESC" type="VARCHAR" length="255" jt="12" />
+			<column name="prem_typ_desc" prior="PREM_TYP_DESC" type="VARCHAR" length="255" jt="12" />
+			<column name="loc_of_occur_desc" prior="LOC_OF_OCCUR_DESC" type="VARCHAR" length="255" jt="12" />
+			<index name="pk_dim_offense" unique="PRIMARY_KEY" >
+				<column name="offense_id" />
+			</index>
+		</table>
+		<table name="facts_complaints" >
+			<column name="cmplnt_num_id" prior="CMPLNT_NUM_ID" type="NVARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="addr_pct_cd" prior="ADDR_PCT_CD" type="NVARCHAR" length="255" jt="12" />
+			<column name="ky_cd" prior="KY_CD" type="NVARCHAR" length="255" jt="12" />
+			<column name="location_id" prior="LOCATION_ID" type="NVARCHAR" length="255" jt="12" mandatory="y" />
+			<column name="date_id" prior="DATE_ID" type="INT" jt="4" />
+			<column name="offense_id" prior="OFFENSE_ID" type="INT" jt="4" />
+			<column name="jurisdication_id" prior="JURISDICATION_ID" type="INT" jt="4" />
+			<index name="pk_facts_complaints" unique="PRIMARY_KEY" >
+				<column name="cmplnt_num_id" />
+			</index>
+			<index name="unq_location_id" unique="UNIQUE_INDEX" >
+				<column name="location_id" />
+			</index>
+			<fk name="fk_facts_complaints_dim_offense" virtual="y" to_schema="NYPDcomplaints_dw_lgl.instance" to_table="dim_offense" >
+				<fk_column name="offense_id" pk="offense_id" />
+			</fk>
+			<fk name="fk_facts_complaints_dim_jurisdiction" virtual="y" to_schema="NYPDcomplaints_dw_lgl.instance" to_table="dim_jurisdiction" >
+				<fk_column name="jurisdication_id" pk="jurisdication_id" />
+			</fk>
+			<fk name="fk_facts_complaints_dim_date" virtual="y" to_schema="NYPDcomplaints_dw_lgl.instance" to_table="dim_date" >
+				<fk_column name="date_id" pk="date_id" />
+			</fk>
+			<fk name="fk_facts_complaints_dim_location" virtual="y" to_schema="NYPDcomplaints_dw_lgl.instance" to_table="dim_location" >
+				<fk_column name="location_id" pk="location_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-852" confirmed="y" show_relation="columns" >
+		<entity schema="NYPDcomplaints_dw_lgl.instance" name="dim_date" color="C1D8EE" x="800" y="352" />
+		<entity schema="NYPDcomplaints_dw_lgl.instance" name="dim_jurisdiction" color="C1D8EE" x="128" y="464" />
+		<entity schema="NYPDcomplaints_dw_lgl.instance" name="dim_location" color="C1D8EE" x="784" y="160" />
+		<entity schema="NYPDcomplaints_dw_lgl.instance" name="dim_offense" color="C1D8EE" x="160" y="176" />
+		<entity schema="NYPDcomplaints_dw_lgl.instance" name="facts_complaints" color="C1D8EE" x="480" y="288" />
+		<callout x="48" y="48" pointer="Round" >
+			<comment><![CDATA[This is a layout - a diagram with tools.
+- Create new entities by right-clicking the layout. 
+- Double-click entity headers to edit.
+- For a better understanding of the schema, create multiple layouts.
+- Deploy the model into the database by converting it first to the physical design.]]></comment>
+		</callout>
+	</layout>
+</project>
