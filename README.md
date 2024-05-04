@@ -16,4 +16,14 @@ This dataset includes all valid felony, misdemeanor, and violation crimes report
 
 https://github.com/jayramirez1/CIS9440-HW---Jay-Ramirez/blob/main/Documents/NYPD_Complaint_DataDictionary.xlsx
 
+4. Storage of Choice
+
+Microsoft Azure
+
+5. Power BI & Visuals
+
+https://drive.google.com/drive/folders/1_zsQPawZgUa8fD83mf_iUicnzWy4A6Te
+
+
+
 
