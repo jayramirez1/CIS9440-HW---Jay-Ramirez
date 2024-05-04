@@ -25,5 +25,10 @@ Microsoft Azure
 https://drive.google.com/drive/folders/1_zsQPawZgUa8fD83mf_iUicnzWy4A6Te
 
 
+6. All Scripts
+
+https://github.com/jayramirez1/CIS9440-HW---Jay-Ramirez/tree/a0912220a951c991bb9ae5cdd1fddd4e0f1730d2/Scripts
+
+
 
 
