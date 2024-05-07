@@ -10,7 +10,7 @@ https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Map-Year-to-Date-/2fr
    
 2.	Explanation of the data (where does it come from)
 
-This dataset includes all valid felony, misdemeanor, and violation crimes reported to the New York City Police Department (NYPD) for all complete quarters so far for the years of 2022 and 2023. For additional details, please see the attached data dictionary using the link below.
+This dataset includes all valid felony, misdemeanor, and violation crimes reported to the New York City Police Department (NYPD) for all complete quarters so far for the years of 1922 to 2023. For additional details, please see the attached data dictionary using the link below.
 
 3.	Link that shows the data dictionary (excel, google sheets)
 
