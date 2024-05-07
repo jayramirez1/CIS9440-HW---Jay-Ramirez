@@ -3,7 +3,6 @@ GitHub Repo for HW 1 &amp; 2
 
 
 
-Deliverables 3pts
 
 1.	Link of all data sources
 https://data.cityofnewyork.us/Public-Safety/NYPD-Complaint-Map-Year-to-Date-/2fra-mtpn
