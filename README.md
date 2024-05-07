@@ -14,7 +14,7 @@ This dataset includes all valid felony, misdemeanor, and violation crimes report
 
 3.	Link that shows the data dictionary (excel, google sheets)
 
-https://github.com/jayramirez1/CIS9440-HW---Jay-Ramirez/blob/main/Documents/NYPD_Complaint_DataDictionary.xlsx
+https://github.com/jayramirez1/CIS9440-HW---Jay-Ramirez/tree/main/Documents
 
 4. Storage of Choice
 
